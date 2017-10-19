@@ -47,5 +47,6 @@ PlayState = 1
 for PlayState in range(1)
 TurnSelection = int(input("Please select the number of the square to play your tile: "))
 turtle.goto(Coor[TurnSelection]_x,Coor[TurnSelection]_y)
-#if PlayerTurn == 0 :
-	
+if PlayerTurn == 0 :
+	turtle.write("X")
+#Continue X playthrough instructions
