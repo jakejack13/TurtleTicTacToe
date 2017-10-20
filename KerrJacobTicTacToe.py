@@ -1,12 +1,14 @@
 #Jacob Kerr
 #Tic-Tac-Toe
 
-#Database of Coordinates
+#Database of Coordinates and Square States
 CoorX = []
 CoorY = []
+SquareState = []
 for i in range(10):
         CoorX.append(1)
         CoorY.append(1)
+        SquareState.append(1)
 CoorX[1] = 50
 CoorY[1] = 250
 CoorX[2] = 150
@@ -25,6 +27,15 @@ CoorX[8] = 150
 CoorY[8] = 50
 CoorX[9] = 250
 CoorY[9] = 50
+SquareState[1] = False
+SquareState[2] = False
+SquareState[3] = False
+SquareState[4] = False
+SquareState[5] = False
+SquareState[6] = False
+SquareState[7] = False
+SquareState[8] = False
+SquareState[9] = False
 
 import turtle
 turtle.hideturtle()
@@ -50,6 +61,7 @@ PlayerTurn = 0
 PlayState = 1
 #Play Loop
 while(PlayState == 1):
+        #Player Message
         if PlayerTurn == 0 :
                 print("Player X's turn")
         elif PlayerTurn == 1 :
@@ -57,9 +69,10 @@ while(PlayState == 1):
         else:
                 print("Error! Shutting down program!")
                 break
+        #Square Selection
         TurnSelection = int(input("Please select the number of the square to play your tile: "))
         if TurnSelection > 9 or TurnSelection < 1 :
-                print("That's not a square. ERROR SHUTTING DOWN PROGRAM!")
+                print("Player wins")
                 break
         turtle.penup()
         turtle.goto(CoorX[TurnSelection],CoorY[TurnSelection])
