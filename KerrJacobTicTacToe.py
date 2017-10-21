@@ -27,16 +27,10 @@ CoorX[8] = 150
 CoorY[8] = 50
 CoorX[9] = 250
 CoorY[9] = 50
-SquareState[1] = False
-SquareState[2] = False
-SquareState[3] = False
-SquareState[4] = False
-SquareState[5] = False
-SquareState[6] = False
-SquareState[7] = False
-SquareState[8] = False
-SquareState[9] = False
+for i in range(10) :
+        SquareState[i] = False
 
+#Turtle Time
 import turtle
 turtle.hideturtle()
 #Make square
