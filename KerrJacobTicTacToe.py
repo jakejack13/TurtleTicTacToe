@@ -71,6 +71,7 @@ while(PlayState == 1):
         turtle.penup()
         turtle.goto(CoorX[TurnSelection],CoorY[TurnSelection])
         turtle.pendown()
+        #Tile Write
         if PlayerTurn == 0 :
                 turtle.write("X", font=("Arial", 30, "normal"),align="center")
                 SquareState[TurnSelection] = 0
@@ -81,6 +82,7 @@ while(PlayState == 1):
                 PlayerTurn = 0
         else :
                 print("Error! Shutting down program!")
+        #Check Win Conditions (Needs to be debugged - Returns win after first turn)
         if ((SquareState[1] == 0 and SquareState[2] == 0 and SquareState[3] == 0) or (SquareState[4] == 0 and SquareState[5] == 0 and SquareState[6] == 0) or (SquareState[7] == 0 and SquareState[8] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[4] == 0 and SquareState[7] == 0) or (SquareState[2] == 0 and SquareState[5] == 0 and SquareState[8] == 0) or (SquareState[3] == 0 and SquareState[6] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[5] == 0 and SquareState[9] == 0) or (SquareState[3] == 0 and SquareState[5] == 0 and SquareState[7] == 0)) :
                 print("Player X won!")
                 break
