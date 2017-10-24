@@ -73,9 +73,19 @@ while(PlayState == 1):
         turtle.pendown()
         if PlayerTurn == 0 :
                 turtle.write("X", font=("Arial", 30, "normal"),align="center")
+                SquareState[TurnSelection] = 0
                 PlayerTurn = 1
         elif PlayerTurn == 1 :
                 turtle.write("O", font=("Arial", 30, "normal"),align="center")
+                SquareState[TurnSelection] = 1
                 PlayerTurn = 0
         else :
                 print("Error! Shutting down program!")
+        if ((SquareState[1] == 0 and SquareState[2] == 0 and SquareState[3] == 0) or (SquareState[4] == 0 and SquareState[5] == 0 and SquareState[6] == 0) or (SquareState[7] == 0 and SquareState[8] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[4] == 0 and SquareState[7] == 0) or (SquareState[2] == 0 and SquareState[5] == 0 and SquareState[8] == 0) or (SquareState[3] == 0 and SquareState[6] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[5] == 0 and SquareState[9] == 0) or (SquareState[3] == 0 and SquareState[5] == 0 and SquareState[7] == 0)) :
+                print("Player X won!")
+                break
+        elif ((SquareState[1] == 1 and SquareState[2] == 1 and SquareState[3] == 1) or (SquareState[4] == 1 and SquareState[5] == 1 and SquareState[6] == 1) or (SquareState[7] == 1 and SquareState[8] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[4] == 1 and SquareState[7] == 1) or (SquareState[2] == 1 and SquareState[5] == 1 and SquareState[8] == 1) or (SquareState[3] == 1 and SquareState[6] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[5] == 1 and SquareState[9] == 1) or (SquareState[3] == 1 and SquareState[5] == 1 and SquareState[7] == 1)) :
+                print("Player O won!")
+                break
+        else :
+                print("Nice play!")
