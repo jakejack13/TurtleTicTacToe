@@ -10,23 +10,23 @@ for i in range(10):
         CoorY.append(1)
         SquareState.append(1)
 CoorX[1] = 50
-CoorY[1] = 250
+CoorY[1] = 235
 CoorX[2] = 150
-CoorY[2] = 250
+CoorY[2] = 235
 CoorX[3] = 250
-CoorY[3] = 250
+CoorY[3] = 235
 CoorX[4] = 50
-CoorY[4] = 150
+CoorY[4] = 135
 CoorX[5] = 150
-CoorY[5] = 150
+CoorY[5] = 135
 CoorX[6] = 250
-CoorY[6] = 150
+CoorY[6] = 135
 CoorX[7] = 50
-CoorY[7] = 50
+CoorY[7] = 35
 CoorX[8] = 150
-CoorY[8] = 50
+CoorY[8] = 35
 CoorX[9] = 250
-CoorY[9] = 50
+CoorY[9] = 35
 for i in range(10) :
         SquareState[i] = False
 
@@ -83,11 +83,11 @@ while(PlayState == 1):
         else :
                 print("Error! Shutting down program!")
         #Check Win Conditions (Needs to be debugged - Returns win after first turn)
-        if ((SquareState[1] == 0 and SquareState[2] == 0 and SquareState[3] == 0) or (SquareState[4] == 0 and SquareState[5] == 0 and SquareState[6] == 0) or (SquareState[7] == 0 and SquareState[8] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[4] == 0 and SquareState[7] == 0) or (SquareState[2] == 0 and SquareState[5] == 0 and SquareState[8] == 0) or (SquareState[3] == 0 and SquareState[6] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[5] == 0 and SquareState[9] == 0) or (SquareState[3] == 0 and SquareState[5] == 0 and SquareState[7] == 0)) :
-                print("Player X won!")
-                break
-        elif ((SquareState[1] == 1 and SquareState[2] == 1 and SquareState[3] == 1) or (SquareState[4] == 1 and SquareState[5] == 1 and SquareState[6] == 1) or (SquareState[7] == 1 and SquareState[8] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[4] == 1 and SquareState[7] == 1) or (SquareState[2] == 1 and SquareState[5] == 1 and SquareState[8] == 1) or (SquareState[3] == 1 and SquareState[6] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[5] == 1 and SquareState[9] == 1) or (SquareState[3] == 1 and SquareState[5] == 1 and SquareState[7] == 1)) :
-                print("Player O won!")
-                break
-        else :
-                print("Nice play!")
+        #if ((SquareState[1] == 0 and SquareState[2] == 0 and SquareState[3] == 0) or (SquareState[4] == 0 and SquareState[5] == 0 and SquareState[6] == 0) or (SquareState[7] == 0 and SquareState[8] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[4] == 0 and SquareState[7] == 0) or (SquareState[2] == 0 and SquareState[5] == 0 and SquareState[8] == 0) or (SquareState[3] == 0 and SquareState[6] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[5] == 0 and SquareState[9] == 0) or (SquareState[3] == 0 and SquareState[5] == 0 and SquareState[7] == 0)) :
+        #        print("Player X won!")
+        #        break
+        #elif ((SquareState[1] == 1 and SquareState[2] == 1 and SquareState[3] == 1) or (SquareState[4] == 1 and SquareState[5] == 1 and SquareState[6] == 1) or (SquareState[7] == 1 and SquareState[8] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[4] == 1 and SquareState[7] == 1) or (SquareState[2] == 1 and SquareState[5] == 1 and SquareState[8] == 1) or (SquareState[3] == 1 and SquareState[6] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[5] == 1 and SquareState[9] == 1) or (SquareState[3] == 1 and SquareState[5] == 1 and SquareState[7] == 1)) :
+        #        print("Player O won!")
+        #        break
+        #else :
+        #        print("Nice play!")
