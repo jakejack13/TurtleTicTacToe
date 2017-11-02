@@ -9,24 +9,8 @@ for i in range(10):
         CoorX.append(1)
         CoorY.append(1)
         SquareState.append(1)
-CoorX[1] = 50
-CoorY[1] = 235
-CoorX[2] = 150
-CoorY[2] = 235
-CoorX[3] = 250
-CoorY[3] = 235
-CoorX[4] = 50
-CoorY[4] = 135
-CoorX[5] = 150
-CoorY[5] = 135
-CoorX[6] = 250
-CoorY[6] = 135
-CoorX[7] = 50
-CoorY[7] = 35
-CoorX[8] = 150
-CoorY[8] = 35
-CoorX[9] = 250
-CoorY[9] = 35
+CoorX = [False,50,150,250,50,150,250,50,150,250]
+CoorY = [False,235,235,235,135,135,135,35,35,35]
 for i in range(10) :
         SquareState[i] = False
 
