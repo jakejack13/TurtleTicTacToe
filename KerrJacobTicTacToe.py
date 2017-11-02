@@ -55,7 +55,7 @@ PlayerTurn = 0
 PlayState = 1
 #Play Loop
 while(PlayState == 1):
-        #Player Message
+        #Player Message and Turn Selection
         if PlayerTurn == 0 :
                 print("Player X's turn")
         elif PlayerTurn == 1 :
