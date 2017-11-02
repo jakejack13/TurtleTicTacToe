@@ -8,7 +8,7 @@ Turn is switched to next player
 Keep playing until win condition is satisfied
 End game
 
-Need to create an algorithm that will record where the tile is placed and which player
+Need to create an algorithm that will record where the tile is placed and which player has placed it
 Then calculates winning positions and declares winner
 
 -Jacob Kerr, 2017

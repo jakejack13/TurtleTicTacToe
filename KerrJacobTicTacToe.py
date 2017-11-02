@@ -2,18 +2,18 @@
 #Tic-Tac-Toe
 
 #Database of Coordinates and Square States
-CoorX = []
-CoorY = []
-SquareState = []
+coor_x = []
+coor_y = []
+square_state = []
 for i in range(10):
-        CoorX.append(1)
-        CoorY.append(1)
-        SquareState.append(1)
-CoorX = [False,50,150,250,50,150,250,50,150,250]
-CoorY = [False,235,235,235,135,135,135,35,35,35]
+        coor_x.append(1)
+        coor_y.append(1)
+        square_state.append(1)
+coor_x = [False,50,150,250,50,150,250,50,150,250]
+coor_y = [False,235,235,235,135,135,135,35,35,35]
 for i in range(10) :
-        SquareState[i] = False
-
+        square_state[i] = False
+player_turn
 #Turtle Time
 import turtle
 turtle.hideturtle()
@@ -35,42 +35,44 @@ turtle.goto(200,300)
 
 #X = 0, O = 1
 #First time playthrough set up
-PlayerTurn = 0
-PlayState = 1
+player_turn = 0
+play_state = 1
 #Play Loop
-while(PlayState == 1):
+while(play_state == 1):
         #Player Message and Turn Selection
-        if PlayerTurn == 0 :
+        if player_turn == 0 :
                 print("Player X's turn")
-        elif PlayerTurn == 1 :
+        elif player_turn == 1 :
                 print("Player O's turn")
         else:
                 print("Error! Shutting down program!")
                 break
         #Square Selection
-        TurnSelection = int(input("Please select the number of the square to play your tile: "))
-        if TurnSelection > 9 or TurnSelection < 1 :
+        turn_selection = int(input("Please select the number of the square to play your tile: "))
+        if not square_state[turn_selection]:
+                print("This square is already full. Please select another square.")
+        if turn_selection > 9 or turn_selection < 1 :
                 print("Player wins")
                 break
         turtle.penup()
-        turtle.goto(CoorX[TurnSelection],CoorY[TurnSelection])
+        turtle.goto(coor_x[turn_selection],coor_y[turn_selection])
         turtle.pendown()
         #Tile Write
-        if PlayerTurn == 0 :
+        if player_turn == 0 :
                 turtle.write("X", font=("Arial", 30, "normal"),align="center")
-                SquareState[TurnSelection] = 0
-                PlayerTurn = 1
-        elif PlayerTurn == 1 :
+                square_state[turn_selection] = 0
+                player_turn = 1
+        elif player_turn == 1 :
                 turtle.write("O", font=("Arial", 30, "normal"),align="center")
-                SquareState[TurnSelection] = 1
-                PlayerTurn = 0
+                square_state[turn_selection] = 1
+                player_turn = 0
         else :
                 print("Error! Shutting down program!")
         #Check Win Conditions (Needs to be debugged - Returns win after first turn)
-        #if ((SquareState[1] == 0 and SquareState[2] == 0 and SquareState[3] == 0) or (SquareState[4] == 0 and SquareState[5] == 0 and SquareState[6] == 0) or (SquareState[7] == 0 and SquareState[8] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[4] == 0 and SquareState[7] == 0) or (SquareState[2] == 0 and SquareState[5] == 0 and SquareState[8] == 0) or (SquareState[3] == 0 and SquareState[6] == 0 and SquareState[9] == 0) or (SquareState[1] == 0 and SquareState[5] == 0 and SquareState[9] == 0) or (SquareState[3] == 0 and SquareState[5] == 0 and SquareState[7] == 0)) :
+        #if ((square_state[1] == 0 and square_state[2] == 0 and square_state[3] == 0) or (square_state[4] == 0 and square_state[5] == 0 and square_state[6] == 0) or (square_state[7] == 0 and square_state[8] == 0 and square_state[9] == 0) or (square_state[1] == 0 and square_state[4] == 0 and square_state[7] == 0) or (square_state[2] == 0 and square_state[5] == 0 and square_state[8] == 0) or (square_state[3] == 0 and square_state[6] == 0 and square_state[9] == 0) or (square_state[1] == 0 and square_state[5] == 0 and square_state[9] == 0) or (square_state[3] == 0 and square_state[5] == 0 and square_state[7] == 0)) :
         #        print("Player X won!")
         #        break
-        #elif ((SquareState[1] == 1 and SquareState[2] == 1 and SquareState[3] == 1) or (SquareState[4] == 1 and SquareState[5] == 1 and SquareState[6] == 1) or (SquareState[7] == 1 and SquareState[8] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[4] == 1 and SquareState[7] == 1) or (SquareState[2] == 1 and SquareState[5] == 1 and SquareState[8] == 1) or (SquareState[3] == 1 and SquareState[6] == 1 and SquareState[9] == 1) or (SquareState[1] == 1 and SquareState[5] == 1 and SquareState[9] == 1) or (SquareState[3] == 1 and SquareState[5] == 1 and SquareState[7] == 1)) :
+        #elif ((square_state[1] == 1 and square_state[2] == 1 and square_state[3] == 1) or (square_state[4] == 1 and square_state[5] == 1 and square_state[6] == 1) or (square_state[7] == 1 and square_state[8] == 1 and square_state[9] == 1) or (square_state[1] == 1 and square_state[4] == 1 and square_state[7] == 1) or (square_state[2] == 1 and square_state[5] == 1 and square_state[8] == 1) or (square_state[3] == 1 and square_state[6] == 1 and square_state[9] == 1) or (square_state[1] == 1 and square_state[5] == 1 and square_state[9] == 1) or (square_state[3] == 1 and square_state[5] == 1 and square_state[7] == 1)) :
         #        print("Player O won!")
         #        break
         #else :
