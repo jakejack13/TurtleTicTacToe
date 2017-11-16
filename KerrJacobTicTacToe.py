@@ -71,4 +71,21 @@ while(play_state == 1):
                         print("Error! Shutting down program!")
                 #Check Win Conditions (Needs to be debugged - Returns win after first turn)
                 #Insert win module (separate file)
-#Hello world
+
+
+                a = []  #the input
+                b = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]  #the list of correct solutions
+
+
+                def winningCheck(input):
+                    simNums = 0
+                    for x in range(8):
+                        for y in range(3):
+                            for z in range(3):
+                                if input[z] == b[x][y]:
+                                    simNums += 1
+                                    if simNums == 3:
+                                        return True
+                            if y == 2:
+                                simNums = 0
+                    return False
