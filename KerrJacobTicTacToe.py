@@ -70,12 +70,5 @@ while(play_state == 1):
                 else :
                         print("Error! Shutting down program!")
                 #Check Win Conditions (Needs to be debugged - Returns win after first turn)
-                #if ((square_state[1] == 0 and square_state[2] == 0 and square_state[3] == 0) or (square_state[4] == 0 and square_state[5] == 0 and square_state[6] == 0) or (square_state[7] == 0 and square_state[8] == 0 and square_state[9] == 0) or (square_state[1] == 0 and square_state[4] == 0 and square_state[7] == 0) or (square_state[2] == 0 and square_state[5] == 0 and square_state[8] == 0) or (square_state[3] == 0 and square_state[6] == 0 and square_state[9] == 0) or (square_state[1] == 0 and square_state[5] == 0 and square_state[9] == 0) or (square_state[3] == 0 and square_state[5] == 0 and square_state[7] == 0)) :
-                #        print("Player X won!")
-                #        break
-                #elif ((square_state[1] == 1 and square_state[2] == 1 and square_state[3] == 1) or (square_state[4] == 1 and square_state[5] == 1 and square_state[6] == 1) or (square_state[7] == 1 and square_state[8] == 1 and square_state[9] == 1) or (square_state[1] == 1 and square_state[4] == 1 and square_state[7] == 1) or (square_state[2] == 1 and square_state[5] == 1 and square_state[8] == 1) or (square_state[3] == 1 and square_state[6] == 1 and square_state[9] == 1) or (square_state[1] == 1 and square_state[5] == 1 and square_state[9] == 1) or (square_state[3] == 1 and square_state[5] == 1 and square_state[7] == 1)) :
-                #        print("Player O won!")
-                #        break
-                #else :
-                #        print("Nice play!")
+                #Insert win module (separate file)
 #Hello world
