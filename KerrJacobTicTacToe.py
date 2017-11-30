@@ -1,4 +1,4 @@
-#Jacob Kerr
+#кai typявнський
 #Tic-Tac-Toe
 
 #Database of Coordinates and Square States
@@ -10,7 +10,7 @@ square_state = []
 playerSelections = []
 player0Selections = []
 player1Selections = []  #the input
-b = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]  #the list of correct solutions
+winningCombinations = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]  #the list of correct solutions
 
 for i in range(10):
         coor_x.append(1)
@@ -24,6 +24,8 @@ for i in range(10) :
 
 #Turtle Time
 import turtle
+turtle.screensize(1920,1080)
+turtle.speed("fastest")
 turtle.hideturtle()
 #Make square
 turtle.goto(300, 0)
@@ -48,9 +50,9 @@ play_state = 1
 
 a = 0
 
-def checkFull(lst, chosenNumber):
-    for x in lst:
-        if chosenNumber == lst:
+def checkFull(input, chosenNumber):
+    for x in input:
+        if chosenNumber == x:
             return True
     return False
 
@@ -58,10 +60,12 @@ def checkFull(lst, chosenNumber):
 
 def winningCheck(input):
     simNums = 0
+    if len(input) < 3:
+        return False
     for x in range(8):
         for y in range(3):
-            for z in range(3):
-                if input[z] == b[x][y]:
+            for z in range(len(input)):
+                if input[z] == winningCombinations[x][y]:
                     simNums += 1
                     if simNums == 3:
                         return True
@@ -81,20 +85,19 @@ while(play_state == 1):
                 break
         #Square Selection
         turn_selection = int(input("Please select the number of the square to play your tile: "))
-        playerSelections.append(1)
-
         #Revise square state system
-        """if square_state[turn_selection] != False :
-            print("This square is already full. Please select another square.")"""
 
 
         #Checking if full
-        if checkFull(playerSelections) == True:
+        if checkFull(playerSelections, turn_selection) == True:
             print("This square is already full. Please select another square.")
+        elif turn_selection == "":
+            print("You didn't chose a square")
         elif turn_selection > 9 or turn_selection < 1 :
                 print("Player wins")
                 break
         else :
+                playerSelections.append(turn_selection)
                 turtle.penup()
                 turtle.goto(coor_x[turn_selection],coor_y[turn_selection])
                 turtle.pendown()
@@ -102,11 +105,18 @@ while(play_state == 1):
                 if player_turn == 0 :
                         turtle.write("X", font=("Arial", 30, "normal"),align="center")
                         #square_state[turn_selection] = -1
-                        append.player0Selections()
+                        player0Selections.append(turn_selection)
+                        if winningCheck(player0Selections) == True:
+                            print('Player X won!')
+                            play_state = 0
                         player_turn = 1
                 elif player_turn == 1 :
                         turtle.write("O", font=("Arial", 30, "normal"),align="center")
                         #square_state[turn_selection] = 1
+                        player1Selections.append(turn_selection)
+                        if winningCheck(player1Selections) == True:
+                            print('Player O won!')
+                            play_state = 0
                         player_turn = 0
                 else :
                         print("Error! Shutting down program!")
