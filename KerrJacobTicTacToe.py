@@ -16,6 +16,7 @@ for i in range(10) :
 #Turtle Time
 import turtle
 turtle.hideturtle()
+turtle.screensize(1920,1080)
 #Make square
 turtle.goto(300, 0)
 turtle.goto(300, 300)
