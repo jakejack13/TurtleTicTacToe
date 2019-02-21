@@ -143,7 +143,7 @@ while(play_state == 1):
                 turn_selection = int(input("Please select the number of the square to play your tile: "))
         elif player_turn == 1 :
                 print("Player O's turn")
-                turn_selection = minMax();
+                turn_selection = int(input("Please select the number of the square to play your tile: "))
         else:
                 print("Error! Shutting down program!")
                 break
